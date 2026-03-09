@@ -16,6 +16,7 @@
             <a class="option<?= $activeOption === 'home' ? ' active' : ''; ?>" href="home">Home</a>
             <a class="option<?= $activeOption === 'about' ? ' active' : ''; ?>" href="about">About</a>
             <a class="option<?= $activeOption === 'contact' ? ' active' : ''; ?>" href="contact">Contact</a>
+            <a class="option<?= $activeOption === 'admin' ? ' active' : ''; ?>" href="admin">Admin</a>
             <div class="login-container">
                 <form action="/action_page.php">
                     <input type="text" placeholder="Username" name="username">
