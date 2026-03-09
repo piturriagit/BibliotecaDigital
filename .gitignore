@@ -88,7 +88,8 @@ php_errors.log
 # Composer
 #-------------------------
 vendor/
-composer.lock
+# patri: En proyectos profesionales, el composer.lock SÍ se debe subir al repo. Esto garantiza que todos los desarrolladores (y el servidor de producción) usen exactamente las mismas versiones de las librerías. Si lo ignoras, cada vez que alguien haga composer install podría instalar versiones diferentes y romper el código.
+#composer.lock
 
 #-------------------------
 # IDE / Development Files
@@ -134,4 +135,7 @@ _modules/*
 #-------------------------
 # This project
 #-------------------------
+/public/storage
+.phpunit.result.cache
+
 README_ci4.md
