@@ -6,8 +6,10 @@ class About extends BaseController
 {
     public function index()
     {
-        $data = ['title' => 'About BD'];
-        $data = ['activeOption' => 'about'];
+        $data = [
+            'title' => 'About BD',
+            'activeOption' => 'about'
+        ];
         return view('about_page', $data);
     }
 }
