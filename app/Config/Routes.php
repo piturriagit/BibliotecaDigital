@@ -9,5 +9,4 @@ $routes->get('/', 'Home::index');
 $routes->get('/home', 'Home::index');
 $routes->get('/about', 'About::index');
 $routes->get('/contact', 'Contact::index');
-$routes->get('/books', 'Books::index');
-$routes->get('/books/new', 'Books::new');
+$routes->resource('books', ['placeholder' => '(:num)', 'except' => ['show']]);
