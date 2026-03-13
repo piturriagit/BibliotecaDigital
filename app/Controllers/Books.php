@@ -122,7 +122,7 @@ class Books extends BaseController
         $rules = [
             'title' => 'required',
             'description' => 'permit_empty|min_length[5]',
-            'path' => 'required|valid_url|max_length[255]|is_unique[books.path,id,{$id}]',
+            'path' => "required|valid_url|max_length[255]|is_unique[books.path,id,{$id}]",
         ];
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
