@@ -1,4 +1,14 @@
 # BibliotecaDigital
+1. Download project
+https://github.com/piturriagit/BibliotecaDigital/tree/mvcForBooks
+
+2. Create database and fill testing data if necessary
+```shell
+$ mampphp spark migrate 
+$ mampphp spark db:seed TestingBooks
+```
+3. Open browser with url
+http://localhost:8888/bibliotecadigital/public/
 
 ## Problems while using MAMP and CodeIgniter
 - Lots of files in git due to CRLF in different operative systems. Salvar los cambios que no quiero perder, y luego configurar
