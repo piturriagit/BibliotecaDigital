@@ -116,6 +116,9 @@ class Books extends BaseController
      */
     public function update($id = null)
     {
+        if($this->request->is('put') && $id === null) {
+            throw new PageNotFoundException("Book ".$id." was not found");
+        }
         $rules = [
             'title' => 'required',
             'description' => 'permit_empty|min_length[5]',
