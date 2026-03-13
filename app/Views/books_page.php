@@ -35,8 +35,8 @@
                 <td><?php echo $book['updated_at']; ?></td>
                 <td><?php echo $book['deleted_at']; ?></td>
                 <td>
-                    <a class="btn btn-edit" href="<?= base_url("books/edit/{$book['id']}"); ?>">Edit</a>
-                    <a class="btn btn-danger" href="<?= base_url("books/delete/{$book['id']}"); ?>">Delete</a>
+                    <a class="btn btn-edit" href="<?= base_url("books/".$book['id']."/edit"); ?>">Edit</a>
+                    <a class="btn btn-danger" href="<?= base_url("books/".$book['id']."/delete"); ?>">Delete</a>
                 </td>
             </tr>
         <?php endforeach; ?>

@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\BooksModel;
+use \CodeIgniter\Exceptions\PageNotFoundException;
+
 class Books extends BaseController
 {
     /**
@@ -11,7 +14,7 @@ class Books extends BaseController
      */
     public function index()
     {
-        $booksModel = new \App\Models\BooksModel();
+        $booksModel = new BooksModel();
         $table['books'] = $booksModel->findAll();
         $data = [
             'title' => 'Books repository',
@@ -42,7 +45,7 @@ class Books extends BaseController
     public function new()
     {
         $data = [
-            'title' => 'Create new book',
+            'title' => 'Create a new book',
             'activeOption' => 'books'
         ];
         return view('new_book_page', $data);
@@ -66,7 +69,7 @@ class Books extends BaseController
 
         $post=$this->request->getPost(['title', 'author', 'description', 'published_year', 'path']);
 
-        $booksModel = new \App\Models\BooksModel();
+        $booksModel = new BooksModel();
         $booksModel->insert([
             'title' => trim($post['title']),
             'author' => trim($post['author']),
@@ -87,7 +90,21 @@ class Books extends BaseController
      */
     public function edit($id = null)
     {
-        //
+        if($id === null) {
+            throw new PageNotFoundException("Book ".$id." was not found");
+        }
+        $booksModel = new BooksModel();
+        $book = $booksModel->find($id);
+        if ($book === null) {
+            throw new PageNotFoundException("Book with id $id not found");
+        }
+
+        $data = [
+            'title' => 'Edit book: '.$book['title'],
+            'activeOption' => 'books',
+            'book' => $book,
+        ];
+        return view('edit_book_page', $data);
     }
 
     /**
@@ -99,7 +116,27 @@ class Books extends BaseController
      */
     public function update($id = null)
     {
-        //
+        $rules = [
+            'title' => 'required',
+            'description' => 'permit_empty|min_length[5]',
+            'path' => 'required|valid_url|max_length[255]|is_unique[books.path,id,{$id}]',
+        ];
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        $post=$this->request->getPost(['title', 'author', 'description', 'published_year', 'path']);
+
+        $booksModel = new BooksModel();
+        $booksModel->update($id,[
+            'title' => trim($post['title']),
+            'author' => trim($post['author']),
+            'description' => trim($post['description']),
+            'published_year' => $post['published_year'],
+            'path' => trim($post['path']),
+        ]);
+
+        return redirect()->to('books');
     }
 
     /**

@@ -124,6 +124,12 @@ topnav .login-container button:hover {
   background-color: #f1f1f1;
 }
 
+form {
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
 /* Style inputs */
 input[type=text], input[type=number], select, textarea {
   width: 100%;
@@ -140,6 +146,12 @@ textarea {
   height: 150px;
   box-sizing: border-box;
   resize: none; /* Disable resizing */
+}
+
+input[readonly] {
+    cursor: not-allowed;       /* Cambia el puntero del ratón */
+    outline: none;             /* Quita el borde azul al hacer clic */
+    border: none;              /* Elimina el borde */
 }
 
 /* Style the submit button */
