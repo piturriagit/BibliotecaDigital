@@ -7,6 +7,29 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  display:flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  position: sticky;
+  top: 0; 
+
+}
+
+main {
+  flex: 1;
+  padding: 0% 20px;
+}
+
+footer {
+  position:sticky;
+   bottom: 0;
+   width: 100%;
+   background-color: var(--primary-bg-color);
+   color: #ffffff;
+   text-align: center;
 }
 
 .topnav {
@@ -59,19 +82,9 @@ body {
   cursor: pointer;
 }
 
-topnav .login-container button:hover,
-topnav .login-container button:focus {
+.topnav .login-container button:hover,
+.topnav .login-container button:focus {
   background-color: var(--primary-bg-collor-hover);
-}
-
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: var(--primary-bg-color);
-   color: #ffffff;
-   text-align: center;
 }
 
 .btn {
