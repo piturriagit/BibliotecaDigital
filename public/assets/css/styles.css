@@ -24,7 +24,8 @@ body {
   font-size: 17px;
 }
 
-.topnav a:hover {
+.topnav a:hover, 
+.topnav a:focus {
   background-color: #dddddd;
   color: #000000;
 }
@@ -58,7 +59,8 @@ body {
   cursor: pointer;
 }
 
-topnav .login-container button:hover {
+topnav .login-container button:hover,
+topnav .login-container button:focus {
   background-color: var(--primary-bg-collor-hover);
 }
 
@@ -82,13 +84,13 @@ topnav .login-container button:hover {
 }
 
 .btn-new {background-color: var(--primary-bg-color);}
-.btn-new:hover {background-color: var(--primary-bg-collor-hover);}
+.btn-new:hover, .btn-new:focus {background-color: var(--primary-bg-collor-hover);}
 
 .btn-edit {background-color: var(--primary-bg-color);}
-.btn-edit:hover {background: var(--primary-bg-collor-hover);}
+.btn-edit:hover, .btn-edit:focus {background: var(--primary-bg-collor-hover);}
 
 .btn-danger {background-color: #da190b;}
-.btn-danger:hover {background: #f44336;}
+.btn-danger:hover, .btn-danger:focus {background: #f44336;}
 
 #searchInput {
   background-image: url('/css/searchicon.png'); /* Add a search icon to input */
@@ -119,7 +121,9 @@ topnav .login-container button:hover {
   border-bottom: 1px solid #ddd;
 }
 
-#myTable tr.header, #myTable tr:hover {
+#myTable tr.header, 
+#myTable tr:hover,
+#myTable tr:focus-within {
   /* Add a grey background color to the table header and on hover */
   background-color: #f1f1f1;
 }
