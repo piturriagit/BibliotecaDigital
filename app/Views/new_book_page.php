@@ -30,7 +30,7 @@
             <label for="path">Path:</label>
             <input type="text" class="form-control" id="path" name="path" value="<?= old('path') ?>" required>
         </div>
-        <button type="cancel" class="btn btn-danger" onclick="window.history.back(); return false;">Cancel</button>
+        <button type="cancel" class="btn btn-cancel" onclick="window.history.back(); return false;">Cancel</button>
         <button type="submit" class="btn btn-new">Create Book</button>
     </form>
 <?php echo $this->endSection(); ?>

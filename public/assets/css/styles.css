@@ -86,11 +86,14 @@ topnav .login-container button:focus {
 .btn-new {background-color: var(--primary-bg-color);}
 .btn-new:hover, .btn-new:focus {background-color: var(--primary-bg-collor-hover);}
 
-.btn-edit {background-color: var(--primary-bg-color);}
-.btn-edit:hover, .btn-edit:focus {background: var(--primary-bg-collor-hover);}
+.btn-edit {background-color: #ff9900;}
+.btn-edit:hover, .btn-edit:focus {background: #ffa928;}
 
 .btn-danger {background-color: #da190b;}
 .btn-danger:hover, .btn-danger:focus {background: #f44336;}
+
+.btn-cancel {background-color: #555555;}
+.btn-cancel:hover, .btn-cancel:focus {background-color: #777777;}
 
 #searchInput {
   background-image: url('/css/searchicon.png'); /* Add a search icon to input */
