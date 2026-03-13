@@ -89,11 +89,15 @@ footer {
 
 .btn {
   display: inline-block;
+  width: 100%;
   border: none; /* Remove borders */
   color: white; /* Add a text color */
   padding: 14px 28px; /* Add some padding */
   cursor: pointer; /* Add a pointer cursor on mouse-over */
   text-decoration: none; /* Remove underline from links */
+  font-size: 18px; /* Increase font size */
+  text-align: center; /* Center the text */
+  border-radius: 4px; /* Add rounded corners */
 }
 
 .btn-new {background-color: var(--primary-bg-color);}
@@ -102,8 +106,8 @@ footer {
 .btn-edit {background-color: #ff9900;}
 .btn-edit:hover, .btn-edit:focus {background: #ffa928;}
 
-.btn-danger {background-color: #da190b;}
-.btn-danger:hover, .btn-danger:focus {background: #f44336;}
+.btn-delete {background-color: #da190b;}
+.btn-delete:hover, .btn-delete:focus {background: #f44336;}
 
 .btn-cancel {background-color: #555555;}
 .btn-cancel:hover, .btn-cancel:focus {background-color: #777777;}
@@ -198,6 +202,12 @@ input[type=submit]:hover {
   color: #6f0700;
   margin-bottom: 15px;
   border: 1px solid #6f0700;  
+}
+
+#deleteForm {
+  display: inline;
+  padding:0;
+  margin:0;
 }
 
 @media screen and (max-width: 600px) {

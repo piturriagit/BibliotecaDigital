@@ -36,7 +36,10 @@
                 <td><?php echo $book['deleted_at']; ?></td>
                 <td>
                     <a class="btn btn-edit" href="<?= base_url("books/".$book['id']."/edit"); ?>">Edit</a>
-                    <a class="btn btn-danger" href="<?= base_url("books/".$book['id']."/delete"); ?>">Delete</a>
+                    <form id="deleteForm" action="<?= base_url("books/".$book['id']); ?>" method="post">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-delete" onclick="return confirm('Are you sure you want to delete this book?');">Delete</button>
+                    </form>
                 </td>
             </tr>
         <?php endforeach; ?>

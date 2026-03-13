@@ -151,6 +151,16 @@ class Books extends BaseController
      */
     public function delete($id = null)
     {
-        //
+        if($this->request->is('delete') && $id === null) {
+            throw new PageNotFoundException("Book ".$id." was not found");
+        }
+        $booksModel = new BooksModel();
+        $book = $booksModel->find($id);
+        if ($book === null) {
+            throw new PageNotFoundException("Book with id $id not found");
+        }
+
+        $booksModel->delete($id);
+        return redirect()->to('books');
     }
 }
