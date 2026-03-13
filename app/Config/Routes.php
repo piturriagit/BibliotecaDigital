@@ -10,3 +10,4 @@ $routes->get('/home', 'Home::index');
 $routes->get('/about', 'About::index');
 $routes->get('/contact', 'Contact::index');
 $routes->get('/books', 'Books::index');
+$routes->get('/books/new', 'Books::new');

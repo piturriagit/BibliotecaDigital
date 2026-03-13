@@ -1,3 +1,7 @@
+:root {
+  --primary-bg-color: #008000;
+  --primary-bg-collor-hover: #46a049;
+}
 * {box-sizing: border-box;}
 
 body {
@@ -26,7 +30,7 @@ body {
 }
 
 .topnav a.active {
-  background-color: #008000;
+  background-color: var(--primary-bg-color);
   color: #ffffff;
 }
 
@@ -55,7 +59,7 @@ body {
 }
 
 topnav .login-container button:hover {
-  background-color: #008000;
+  background-color: var(--primary-bg-collor-hover);
 }
 
 .footer {
@@ -63,7 +67,7 @@ topnav .login-container button:hover {
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: #008000;
+   background-color: var(--primary-bg-color);
    color: #ffffff;
    text-align: center;
 }
@@ -74,16 +78,17 @@ topnav .login-container button:hover {
   color: white; /* Add a text color */
   padding: 14px 28px; /* Add some padding */
   cursor: pointer; /* Add a pointer cursor on mouse-over */
+  text-decoration: none; /* Remove underline from links */
 }
 
-.btn-new {background-color: #2196F3;}
-.btn-new:hover {background-color: #0b7dda;}
+.btn-new {background-color: var(--primary-bg-color);}
+.btn-new:hover {background-color: var(--primary-bg-collor-hover);}
 
-.btn-edit {background-color: #2196F3;}
-.btn-edit:hover {background: #0b7dda;}
+.btn-edit {background-color: var(--primary-bg-color);}
+.btn-edit:hover {background: var(--primary-bg-collor-hover);}
 
-.btn-danger {background-color: #f44336;}
-.btn-danger:hover {background: #da190b;}
+.btn-danger {background-color: #da190b;}
+.btn-danger:hover {background: #f44336;}
 
 #searchInput {
   background-image: url('/css/searchicon.png'); /* Add a search icon to input */
@@ -120,14 +125,21 @@ topnav .login-container button:hover {
 }
 
 /* Style inputs */
-input[type=text], select {
+input[type=text], input[type=number], select, textarea {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
+  background-color: #f8f8f8;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+textarea {
+  height: 150px;
+  box-sizing: border-box;
+  resize: none; /* Disable resizing */
 }
 
 /* Style the submit button */
