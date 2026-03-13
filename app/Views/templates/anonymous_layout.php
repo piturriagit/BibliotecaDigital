@@ -13,10 +13,10 @@
 <body>
     <header>
         <nav id="menu" class="topnav">
-            <a class="option<?= $activeOption === 'home' ? ' active' : ''; ?>" href="home">Home</a>
-            <a class="option<?= $activeOption === 'about' ? ' active' : ''; ?>" href="about">About</a>
-            <a class="option<?= $activeOption === 'contact' ? ' active' : ''; ?>" href="contact">Contact</a>
-            <a class="option<?= $activeOption === 'books' ? ' active' : ''; ?>" href="books">Books</a>
+            <a class="option<?= $activeOption === 'home' ? ' active' : ''; ?>" href="<?= base_url('home') ?>">Home</a>
+            <a class="option<?= $activeOption === 'about' ? ' active' : ''; ?>" href="<?= base_url('about') ?>">About</a>
+            <a class="option<?= $activeOption === 'contact' ? ' active' : ''; ?>" href="<?= base_url('contact') ?>">Contact</a>
+            <a class="option<?= $activeOption === 'books' ? ' active' : ''; ?>" href="<?= base_url('books') ?>">Books</a>
             <div class="login-container">
                 <form action="/action_page.php">
                     <input type="text" placeholder="Username" name="username">
