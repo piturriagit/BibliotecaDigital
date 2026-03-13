@@ -11,10 +11,14 @@ class Books extends BaseController
      */
     public function index()
     {
+        $booksModel = new \App\Models\BooksModel();
+        $table['books'] = $booksModel->findAll();
         $data = [
             'title' => 'Books repository',
-            'activeOption' => 'books'
+            'activeOption' => 'books',
+            'books' => $table['books'],
         ];
+
         return view('books_page', $data);
     }
 
@@ -37,7 +41,11 @@ class Books extends BaseController
      */
     public function new()
     {
-        //
+        $data = [
+            'title' => 'Create new book',
+            'activeOption' => 'books'
+        ];
+        return view('new_book_page', $data);
     }
 
     /**
