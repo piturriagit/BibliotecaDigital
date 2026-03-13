@@ -28,7 +28,9 @@
     </header>
     <main>
         <h1><?= $title ?? 'Biblioteca Digital' ?></h1>
+        <div style="overflow-x:auto;">
         <?php echo $this->renderSection('content'); ?>
+        </div>
     </main>
     <footer class="footer">
         <p>&copy;<?= date('Y') ?> Biblioteca Digital. Todos los derechos reservados.</p>
