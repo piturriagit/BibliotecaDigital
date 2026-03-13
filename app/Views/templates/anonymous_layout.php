@@ -16,7 +16,7 @@
             <a class="option<?= $activeOption === 'home' ? ' active' : ''; ?>" href="home">Home</a>
             <a class="option<?= $activeOption === 'about' ? ' active' : ''; ?>" href="about">About</a>
             <a class="option<?= $activeOption === 'contact' ? ' active' : ''; ?>" href="contact">Contact</a>
-            <a class="option<?= $activeOption === 'admin' ? ' active' : ''; ?>" href="admin">Admin</a>
+            <a class="option<?= $activeOption === 'books' ? ' active' : ''; ?>" href="books">Books</a>
             <div class="login-container">
                 <form action="/action_page.php">
                     <input type="text" placeholder="Username" name="username">
@@ -33,5 +33,30 @@
     <footer class="footer">
         <p>&copy;<?= date('Y') ?> Biblioteca Digital. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
 </body>
 </html>
