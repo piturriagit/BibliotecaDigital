@@ -55,7 +55,27 @@ class Books extends BaseController
      */
     public function create()
     {
-        //
+        $rules = [
+            'title' => 'required',
+            'description' => 'permit_empty|min_length[5]',
+            'path' => 'required|valid_url|max_length[255]|is_unique[books.path]',
+        ];
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        $post=$this->request->getPost(['title', 'author', 'description', 'published_year', 'path']);
+
+        $booksModel = new \App\Models\BooksModel();
+        $booksModel->insert([
+            'title' => trim($post['title']),
+            'author' => trim($post['author']),
+            'description' => trim($post['description']),
+            'published_year' => $post['published_year'],
+            'path' => trim($post['path']),
+        ]);
+
+        return redirect()->to('books');
     }
 
     /**

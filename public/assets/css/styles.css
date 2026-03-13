@@ -159,6 +159,15 @@ input[type=submit]:hover {
   background-color: #0b7dda;
 }
 
+.alert {
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #f6a8a3; /* Red */
+  color: #6f0700;
+  margin-bottom: 15px;
+  border: 1px solid #6f0700;  
+}
+
 @media screen and (max-width: 600px) {
   .topnav .login-container {
     float: none;
