@@ -135,7 +135,11 @@ _modules/*
 #-------------------------
 # This project
 #-------------------------
-/public/storage
+/public/upload/books/*
+!public/upload/books/index.html
+!public/upload/books/Around the World in 28 Languages.epub
+!public/upload/books/famouspaintings.epub
+!public/upload/books/sample.pdf
+!public/upload/books/sample3.pdf
+!public/upload/books/Sway.epub'
 .phpunit.result.cache
-
-README_ci4.md

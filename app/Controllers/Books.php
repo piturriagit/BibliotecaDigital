@@ -159,8 +159,55 @@ class Books extends BaseController
         if ($book === null) {
             throw new PageNotFoundException("Book with id $id not found");
         }
+        $filePath = ROOTPATH . 'public/' . $book['path'];
+        if (file_exists($filePath) && is_file($filePath)) {
+            unlink($filePath);
+        }
 
         $booksModel->delete($id);
         return redirect()->to('books');
+    }
+
+    public function select()
+    {
+        $data = [
+            'title' => 'Upload a book',
+            'step' => 'Step 1: Load the book file',
+            'activeOption' => 'books'
+        ];
+        return view('upload_book_page', $data);
+    }
+
+    public function upload()
+    {
+        $file=$this->request->getFile('file');
+        if(!$file->isValid()) {
+            echo "File upload failed with error code: ".$file->getError();
+            return;
+        }
+
+        $rules = [
+            'file' => 'uploaded[file]|max_size[file,10240]|ext_in[file,pdf,epub]',
+        ];
+
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+        }
+
+        if(!$file->hasMoved()) {
+            $randomName = $file->getRandomName();
+            $relativePath = 'upload/books/';
+            $file->move(ROOTPATH . 'public/' . $relativePath, $randomName);
+        }
+        $data = [
+            'title' => 'Upload a book',
+            'step' => 'Step 2: Set the metadata',
+            'activeOption' => 'books',
+            'filename' => $file->getClientName(),
+            'filepath' => $relativePath . $randomName,
+            'filesize' => $file->getSize(),
+        ];
+        return view('new_book_page', $data);
+
     }
 }
