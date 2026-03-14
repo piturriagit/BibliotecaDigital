@@ -196,7 +196,7 @@ class Books extends BaseController
 
         if(!$file->hasMoved()) {
             $randomName = $file->getRandomName();
-            $relativePath = 'uploads/books/';
+            $relativePath = 'upload/books/';
             $file->move(ROOTPATH . 'public/' . $relativePath, $randomName);
         }
         $data = [
