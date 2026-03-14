@@ -17,6 +17,7 @@
             <a class="option<?= $activeOption === 'about' ? ' active' : ''; ?>" href="<?= base_url('about') ?>">About</a>
             <a class="option<?= $activeOption === 'contact' ? ' active' : ''; ?>" href="<?= base_url('contact') ?>">Contact</a>
             <a class="option<?= $activeOption === 'books' ? ' active' : ''; ?>" href="<?= base_url('books') ?>">Books</a>
+            <a class="option" href="https://github.com/piturriagit/BibliotecaDigital">GitHub</a>
         </nav>
     </header>
     <main>
