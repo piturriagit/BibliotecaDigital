@@ -135,11 +135,11 @@ _modules/*
 #-------------------------
 # This project
 #-------------------------
-/public/upload/books/*
-!public/upload/books/index.html
-!public/upload/books/Around the World in 28 Languages.epub
-!public/upload/books/famouspaintings.epub
-!public/upload/books/sample.pdf
-!public/upload/books/sample3.pdf
-!public/upload/books/Sway.epub'
+/public/uploads/books/*
+!public/uploads/books/index.html
+!public/uploads/books/Around the World in 28 Languages.epub
+!public/uploads/books/famouspaintings.epub
+!public/uploads/books/sample.pdf
+!public/uploads/books/sample3.pdf
+!public/uploads/books/Sway.epub'
 .phpunit.result.cache
