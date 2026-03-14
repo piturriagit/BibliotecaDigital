@@ -1,6 +1,6 @@
 <?php echo $this->extend('templates/anonymous_layout'); ?>
 <?php echo $this->section('content'); ?>
-<a class="btn btn-new" href="<?= base_url('books/new'); ?>">Add New Book</a>
+<a class="btn btn-new" href="<?= base_url('books/upload'); ?>">Add New Book</a>
 <input type="text" id="searchInput" onkeyup="myFunction()" placeholder="Search for names..">
 <table id="myTable">
     <thead>
@@ -29,7 +29,7 @@
                 <td><?php echo $book['title']; ?></td>
                 <td><?php echo $book['author']; ?></td>
                 <td><?php echo $book['description']; ?></td>
-                <td><?php echo $book['published_year']; ?></td>
+                <td><?php echo $book['published_year'] ?: ''; ?></td>
                 <td><?php echo $book['path']; ?></td>
                 <td><?php echo $book['created_at']; ?></td>
                 <td><?php echo $book['updated_at']; ?></td>

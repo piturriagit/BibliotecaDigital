@@ -10,3 +10,5 @@ $routes->get('/home', 'Home::index');
 $routes->get('/about', 'About::index');
 $routes->get('/contact', 'Contact::index');
 $routes->resource('books', ['placeholder' => '(:num)', 'except' => ['show']]);
+$routes->get('/books/upload', 'Books::select');
+$routes->post('/books/upload', 'Books::upload');
