@@ -2,7 +2,11 @@
   --primary-bg-color: #008000;
   --primary-bg-collor-hover: #46a049;
 }
-* {box-sizing: border-box;}
+*, 
+*:before, 
+*:afer {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -111,6 +115,8 @@ footer {
 
 .btn-cancel {background-color: #555555;}
 .btn-cancel:hover, .btn-cancel:focus {background-color: #777777;}
+.btn-contact {background-color: #000;}
+.btn-contact:hover, btn-contact:focus {background-color: #555;}
 
 #searchInput {
   background-image: url('/css/searchicon.png'); /* Add a search icon to input */
@@ -210,6 +216,40 @@ input[type=submit]:hover {
   margin:0;
 }
 
+.column {
+  float: left;
+  max-width: 40%;
+  height: 300px;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
 @media screen and (max-width: 600px) {
   .topnav .login-container {
     float: none;
@@ -224,5 +264,9 @@ input[type=submit]:hover {
   }
   .topnav input[type=text] {
     border: 1px solid #cccccc;  
+  }
+  .column {
+    width: 100%;
+    display: block;
   }
 }
