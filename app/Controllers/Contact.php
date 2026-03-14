@@ -7,7 +7,7 @@ class Contact extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Contact BD',
+            'title' => 'Contact Us',
             'activeOption' => 'contact'
         ];
         return view('contact_page', $data);
